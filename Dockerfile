@@ -13,6 +13,6 @@ COPY . .
 RUN env GOOS=linux GOARCH=arm GOARM=5 go build .
 
 FROM gcr.io/distroless/base
-COPY --from=build-env /usr/src/app/cristian-cli /usr/bin/cristian-cli 
-ENTRYPOINT ["cristian-cli"]
+COPY --from=build-env /usr/src/app/cris /usr/bin/cris 
+ENTRYPOINT ["cris"]
 CMD ["--help"]

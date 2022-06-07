@@ -1,4 +1,4 @@
-module cristian-cli
+module cris
 
 go 1.18
 

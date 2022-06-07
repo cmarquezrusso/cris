@@ -32,7 +32,7 @@ import (
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "cristian-cli",
+	Use:   "cris",
 	Short: "Some automation for myself",
 	Long: `Some automation for myself`,
 	// Uncomment the following line if your bare application
@@ -57,7 +57,7 @@ func init() {
 	// Cobra supports persistent flags, which, if defined here,
 	// will be global for your application.
 
-	// rootCmd.PersistentFlags().StrilsngVar(&cfgFile, "config", "", "config file (default is $HOME/.cristian-cli.yaml)")
+	// rootCmd.PersistentFlags().StrilsngVar(&cfgFile, "config", "", "config file (default is $HOME/.cris.yaml)")
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.

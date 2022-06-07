@@ -1,4 +1,4 @@
-# Cristian-cli
+# Cris cli
 
 This is just a wrapper for creating cli using Cobra
 
