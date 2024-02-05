@@ -31,5 +31,6 @@ jobs:
         path: |
           cris*
 
-    - name: Release
-      uses: softprops/action-gh-release@v1
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: "cris*"
