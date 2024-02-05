@@ -52,5 +52,5 @@ func init() {
 
 	// The command sends an alert to a hardcoded endpoint
 
-	socket = ws://localhost/ws/socket
+	// socket = ws://localhost/ws/socket
 }
