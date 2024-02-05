@@ -1,7 +1,7 @@
 # Cris cli
 [![Go Binary](https://github.com/cmarquezrusso/cris/actions/workflows/go.yml/badge.svg)](https://github.com/cmarquezrusso/cris/actions/workflows/go.yml)
 [![Docker Image CI](https://github.com/cmarquezrusso/cris/actions/workflows/docker-image.yml/badge.svg)](https://github.com/cmarquezrusso/cris/actions/workflows/docker-image.yml)
-
+[![Release](https://github.com/cmarquezrusso/cris/actions/workflows/go-release.yml/badge.svg)](https://github.com/cmarquezrusso/cris/actions/workflows/go-release.yml)
 
 Testing how to create a cobra terminal client. 
 
