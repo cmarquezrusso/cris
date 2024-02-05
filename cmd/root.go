@@ -33,8 +33,18 @@ import (
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "cris",
-	Short: "Some automation for myself",
-	Long: `Some automation for myself`,
+	Short: "Computer Rapid Intelligence System",
+	Long: `
+                 _     
+	___ _ __(_)___ 
+   / __| '__| / __|
+  | (__| |  | \__ \
+   \___|_|  |_|___/
+				   
+  
+Welcome to Critical Rapid Interactive System
+This will guide you towards responsive disaster mitigation tools.
+	`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) { 
@@ -63,5 +73,3 @@ func init() {
 	// when this action is called directly.
 	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
-
-

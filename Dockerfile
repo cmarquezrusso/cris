@@ -1,4 +1,4 @@
-FROM golang:1.18 as build-env
+FROM golang:1.21.6 as build-env
 
 ARG BUILD_VERSION
 
@@ -10,9 +10,9 @@ RUN go mod download && go mod verify
 
 COPY . .
 
-RUN env GOOS=linux GOARCH=arm GOARM=5 go build .
+RUN make all
 
-FROM gcr.io/distroless/base
+FROM gcr.io/distroless/base-debian12
 COPY --from=build-env /usr/src/app/cris /usr/bin/cris 
 ENTRYPOINT ["cris"]
 CMD ["--help"]
