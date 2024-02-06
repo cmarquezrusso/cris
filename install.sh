@@ -31,7 +31,7 @@ install_binary() {
   curl -sfL "$binary_url" -o cris
 
   if [ $? -eq 0 ]; then
-    chmod +x binary
+    chmod +x cris
     echo "Binary downloaded successfully."
     echo "Installation complete."
   else
