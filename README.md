@@ -7,9 +7,14 @@ Testing how to create a cobra terminal client.
 
 # Features
 
+- Using cobra-cli to generate commands
 - Send Notification
 
 # Installation
+
+> curl -sfL https://raw.githubusercontent.com/cmarquezrusso/cris/main/install.sh | env version=latest bash 
+
+# Developing
 
 Preconditions:
 
@@ -19,7 +24,6 @@ Preconditions:
     just do docker build, docker start.
 - make all
 
-# Developing
 I am using the cobra-cli to add new commands.
 
 I am also using docker and Make to create the binaries for the main platforms: Windows, Linux, ARM, Darwin and Darwin M*
