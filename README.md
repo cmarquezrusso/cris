@@ -44,4 +44,4 @@ Asciinema here
 
 # Version 
 
-Cris - v0.0.3
+Cris - v0.0.4
