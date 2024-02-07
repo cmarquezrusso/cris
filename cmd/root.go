@@ -33,18 +33,15 @@ import (
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "cris",
-	Short: "Computer Rapid Intelligence System",
+	Short: "cris command line",
 	Long: `
-                 _     
-	___ _ __(_)___ 
-   / __| '__| / __|
-  | (__| |  | \__ \
-   \___|_|  |_|___/
-				   
-  
-Welcome to Critical Rapid Interactive System
-This will guide you towards responsive disaster mitigation tools.
-	`,
+cris command line
+
+A personal cli created using Golang, Cobra cli and an entire DevOps workflow
+using GitHub Actions.
+
+Find more information at: 
+	https://www.cristian.co.nz/`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) { 

@@ -25,28 +25,48 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
+	"github.com/manifoldco/promptui"
 )
 
-// whisperCmd represents the whisper command
-var whisperCmd = &cobra.Command{
-	Use:   "whisper",
-	Short: "Write on a Secure Websocket",
-	Long: `Just to test my setup and send messages over the network`,
+// feedbackCmd represents the feedback command
+var feedbackCmd = &cobra.Command{
+	Use:   "feedback",
+	Short: "Sends feedback",
+	Long: `Sends feedback`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("whisper called")
+		// fmt.Println("feedback called")
+		prompt()
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(whisperCmd)
+	rootCmd.AddCommand(feedbackCmd)
 
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command
 	// and all subcommands, e.g.:
-	// whisperCmd.PersistentFlags().String("foo", "", "A help for foo")
+	// feedbackCmd.PersistentFlags().String("foo", "", "A help for foo")
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
-	// whisperCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	// feedbackCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+}
+
+func prompt(){
+	prompt := promptui.Select{
+		Label: "Select Role",
+		Items: []string{"DevSecOps", "Platform Engineering",
+		"Site Reliability Engineering", "Cloud Native Engineer",
+		"Kubernetes SME"},
+	}
+	
+	_, result, err := prompt.Run()
+	
+	if err != nil {
+		fmt.Printf("Prompt failed %v\n", err)
+		return
+	}
+	
+	fmt.Printf("You choose %q\n", result)
 }
