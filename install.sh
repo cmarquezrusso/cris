@@ -3,28 +3,35 @@
 # Function to detect the OS and platform
 detect_os() {
   case "$(uname -s)" in
-    Linux*)   os="linux";;
+    Linux*)
+      os="linux"
+      case "$(uname -m)" in
+        x86_64)   arch="amd64";;
+        aarch64)  arch="arm64";;
+        *)        arch="unknown";;
+      esac
+      ;;
     Darwin*)
       os="darwin"
-      if [ "$(uname -m)" == "arm64" ]; then
-        arch="arm64"
-      else
-        arch="amd64"
-      fi
+      case "$(uname -m)" in
+        x86_64)   arch="amd64";;
+        arm64)   arch="arm64";;
+        *)        arch="unknown";;
+      esac
       ;;
-    CYGWIN*)  os="windows";;
-    MINGW*)   os="windows";;
-    *)        os="unknown";;
+    CYGWIN*)  os="windows"; arch="amd64";;
+    MINGW*)   os="windows"; arch="amd64";;
+    *)        os="unknown"; arch="amd64";;
   esac
 }
 
 # Function to download and install the binary
 install_binary() {
 
-  binary_url="https://github.com/cmarquezrusso/cris/releases/download/${version}/cris-${os}"
+  binary_url="https://github.com/cmarquezrusso/cris/releases/download/${version}/cris-${os}-${arch}"
 
   if [ "$version" == "latest" ]; then
-    binary_url="https://github.com/cmarquezrusso/cris/releases/${version}/download/cris-${os}"
+    binary_url="https://github.com/cmarquezrusso/cris/releases/${version}/download/cris-${os}-${arch}"
   fi
 
   echo "Downloading binary from: $binary_url"

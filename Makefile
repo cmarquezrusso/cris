@@ -16,7 +16,7 @@ build:
 
 # Cross-compiling for Linux (64-bit)
 build-linux:
-	GOOS=linux GOARCH=amd64 $(GOBUILD) -o $(BINARY_NAME)-linux
+	GOOS=linux GOARCH=amd64 $(GOBUILD) -o $(BINARY_NAME)-amd64
 
 # Cross-compiling for Linux (ARM64)
 build-arm64:
@@ -24,15 +24,15 @@ build-arm64:
 
 # Cross-compiling for Windows (64-bit)
 build-windows:
-	GOOS=windows GOARCH=amd64 $(GOBUILD) -o $(BINARY_NAME).exe
+	GOOS=windows GOARCH=amd64 $(GOBUILD) -o $(BINARY_NAME)-windows-amd64.exe
 
 # Cross-compiling for macOS (64-bit)
 build-darwin:
-	GOOS=darwin GOARCH=amd64 $(GOBUILD) -o $(BINARY_NAME)-darwin
+	GOOS=darwin GOARCH=amd64 $(GOBUILD) -o $(BINARY_NAME)-darwin-amd64
 
 # Cross-compiling for macOS (M1)
 build-darwin-m1:
-	GOOS=darwin GOARCH=arm64 $(GOBUILD) -o $(BINARY_NAME)-darwin-m1
+	GOOS=darwin GOARCH=arm64 $(GOBUILD) -o $(BINARY_NAME)-darwin-arm64
 
 # Run the application
 run:
@@ -45,7 +45,7 @@ test:
 # Clean the generated binaries
 clean:
 	$(GOCLEAN)
-	rm -f $(BINARY_NAME) $(BINARY_NAME)-linux $(BINARY_NAME)-arm64 $(BINARY_NAME).exe $(BINARY_NAME)-darwin $(BINARY_NAME)-darwin-m1
+	rm -f $(BINARY_NAME) $(BINARY_NAME)-amd64 $(BINARY_NAME)-arm64 $(BINARY_NAME)-windows-amd64.exe $(BINARY_NAME)-darwin-amd64 $(BINARY_NAME)-darwin-arm64
 
 # Install dependencies
 install:
