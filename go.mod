@@ -1,4 +1,4 @@
-module cris
+module github.com/cmarquezrusso/cris
 
 go 1.21
 
